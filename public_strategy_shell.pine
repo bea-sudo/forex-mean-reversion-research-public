@@ -1,0 +1,39 @@
+//@version=6
+strategy("Private FX Mean-Reversion Research Shell", overlay=true, pyramiding=0)
+
+// -----------------------------------------------------------------------------
+// PUBLIC SHELL ONLY
+// -----------------------------------------------------------------------------
+// The real signal logic and parameter values are intentionally excluded.
+//
+// Private implementation concept:
+//
+//     longSignal  = privateLongCondition(...)
+//     shortSignal = privateShortCondition(...)
+//
+//     if longSignal
+//         strategy.entry(...)
+//
+//     if shortSignal
+//         strategy.entry(...)
+//
+// This file exists to show the project architecture without publishing the edge.
+// -----------------------------------------------------------------------------
+
+showReference = input.bool(true, "Show reference mean")
+
+// Generic reference only. This is NOT the private strategy rule.
+referenceLength = input.int(50, "Reference Length", minval=2)
+referenceMean = ta.sma(close, referenceLength)
+
+plot(showReference ? referenceMean : na, "Reference Mean", color=color.blue)
+
+// Placeholder conditions deliberately disabled.
+bool privateLongSignal = false
+bool privateShortSignal = false
+
+if privateLongSignal
+    strategy.entry("Long", strategy.long)
+
+if privateShortSignal
+    strategy.entry("Short", strategy.short)
