@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets / credentials
+.env
+*.key
+*.pem
+secrets/
+
+# PRIVATE STRATEGY CORE
+private/*
+!private/README_PRIVATE.txt
+private_core.py
+strategy_private.pine
+config_private.json
+
+# Raw trading / broker exports
+*.xlsx
+*.xls
+*.xlsm
+raw_data/
+broker_exports/
+
+# Generated outputs
+STABLE_patterns.csv
+UNSTABLE_patterns.csv
+pattern_every_10_zscores.csv
+trade_summary.csv
